@@ -1,0 +1,298 @@
+body {
+  background: transparent;
+  overflow: hidden;
+}
+.container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 98vw;
+  height: 90vh;
+}
+.mixplay {
+  border: 1px white solid;
+  border-radius: 5%;
+  padding: 10px;
+  max-width: 476px;
+
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background: #212c3d; /* fallback for old browsers */
+}
+.charselector {
+  display: flex;
+  align-content: space-around;
+  justify-content: space-around;
+}
+
+.character {
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px;
+  background: #29374a;
+}
+
+.character_selected {
+  border: 1px solid yellow;
+  -webkit-box-shadow: #fff 0 -1px 4px, #ff0 0 -2px 10px, #ff8000 0 -10px 20px,
+    red 0 -18px 40px, 5px 5px 15px 0px rgba(0, 0, 0, 0);
+  box-shadow: #fff 0 -1px 4px, #ff0 0 -2px 10px, #ff8000 0 -10px 20px,
+    red 0 -18px 40px, 5px 5px 15px 0px rgba(0, 0, 0, 0);
+}
+
+.emblem {
+  position: relative;
+  border: 1px black solid;
+  border-radius: 5px;
+  width: 476px;
+  height: 96px;
+  background-image: URL("https://www.bungie.net/common/destiny2_content/icons/dce29b2e09a76727a484b745f4bac3cf.jpg");
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.emblemClassRaceGender {
+  position: absolute;
+  top: 9px;
+  left: 100px;
+  width: 400px;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.emblemClass {
+  position: absolute;
+  top: 0px;
+  font-size: 2rem;
+  color: white;
+}
+
+.emblemRaceGender {
+  color: lightgrey;
+  position: absolute;
+  top: 45px;
+  left: 5px;
+  font-size: 1rem;
+}
+.emblemLight {
+  position: absolute;
+  right: 15px;
+  top: 0px;
+  font-size: 2rem;
+  color: yellow;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.loadout {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.subclass {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 116px;
+  width: 116px;
+}
+
+.equipment {
+  padding: 0px;
+}
+
+.weapons,
+.armors {
+  display: flex;
+}
+.Weapon,
+.Armor {
+  cursor: pointer;
+  width: 56px;
+  height: 56px;
+  border: 2px white solid;
+  background: green;
+  margin: 5px;
+  position: relative;
+}
+
+.equipmentlight {
+  background: black;
+  color: yellow;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  font-size: 0.75rem;
+}
+
+.equipmentpopup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 400px;
+
+  background: black;
+  color: white;
+  display: none;
+  padding: 11px;
+  border-radius: 15px;
+  border: 2px white solid;
+}
+.equipmentpopupclose {
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: transparent;
+  color: white;
+}
+.equipmentpopupname {
+  font-family: Arial, Helvetica, sans-serif;
+  pointer-events: none;
+  color: white;
+  box-sizing: border-box;
+  transition-timing-function: cubic-bezier(0.69, 0, 0, 1) !important;
+  animation-timing-function: cubic-bezier(0.69, 0, 0, 1) !important;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.equipmentpopuptype {
+  font-family: Arial, Helvetica, sans-serif;
+  pointer-events: none;
+  font-size: 0.9rem;
+  color: white;
+  box-sizing: border-box;
+  transition-timing-function: cubic-bezier(0.69, 0, 0, 1) !important;
+  animation-timing-function: cubic-bezier(0.69, 0, 0, 1) !important;
+  opacity: 0.5;
+}
+
+.equipmentpopuplight {
+  font-family: Arial, Helvetica, sans-serif;
+  pointer-events: none;
+  box-sizing: border-box;
+  transition-timing-function: cubic-bezier(0.69, 0, 0, 1) !important;
+  animation-timing-function: cubic-bezier(0.69, 0, 0, 1) !important;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.equipmentpopupstats {
+  font-family: Arial, Helvetica, sans-serif;
+  pointer-events: none;
+  font-size: 0.9rem;
+  color: white;
+  box-sizing: border-box;
+  transition-timing-function: cubic-bezier(0.69, 0, 0, 1) !important;
+  animation-timing-function: cubic-bezier(0.69, 0, 0, 1) !important;
+  width: 50%;
+}
+
+.equipmentpopupperks {
+  font-family: Arial, Helvetica, sans-serif;
+  pointer-events: none;
+  font-size: 0.9rem;
+  color: white;
+  box-sizing: border-box;
+  transition-timing-function: cubic-bezier(0.69, 0, 0, 1) !important;
+  animation-timing-function: cubic-bezier(0.69, 0, 0, 1) !important;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+}
+.equipmenetpopupperkline {
+  display: flex;
+  align-items: center;
+}
+.equipmenetpopupperkicon {
+  font-family: Arial, Helvetica, sans-serif;
+  pointer-events: none;
+  font-size: 0.9rem;
+  color: white;
+  box-sizing: border-box;
+  transition-timing-function: cubic-bezier(0.69, 0, 0, 1) !important;
+  animation-timing-function: cubic-bezier(0.69, 0, 0, 1) !important;
+  width: 2rem;
+  height: 2rem;
+  background-size: contain;
+  background-position: top center;
+  background-repeat: no-repeat;
+  flex: none;
+}
+
+.equipmentpopupperk {
+  margin-left: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  pointer-events: none;
+  font-size: 0.9rem;
+  color: white;
+  box-sizing: border-box;
+  transition-timing-function: cubic-bezier(0.69, 0, 0, 1) !important;
+  animation-timing-function: cubic-bezier(0.69, 0, 0, 1) !important;
+}
+
+.pvp,
+.pve {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.statblock {
+  display: flex;
+  overflow: hidden;
+  scrollbar-width: thin;
+}
+
+.stat {
+  margin: 5px;
+  padding: 5px;
+  height: 40px;
+  white-space: nowrap;
+  border: 1px white solid;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px;
+  background: #29374a;
+}
+
+.pvptitle {
+  margin-top: 10px;
+}
+
+.pvetitle {
+  margin-top: 5px;
+}
+
+.d2pullout {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 10px;
+  opacity: 0.4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+  border-radius: 5px;
+}
+
+.d2pulloutimage {
+  width: 4rem;
+  height: 3rem;
+  margin: auto auto 0px;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url("../images/Destiny2Logo.png");
+}
+
+.d2pullouttext {
+  color: white;
+}
