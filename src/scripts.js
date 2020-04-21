@@ -117,6 +117,30 @@ function buildBox() {
   buildEquipment();
   doSubClass();
   doEmblem();
+  doTrials();
+}
+
+function doTrials() {
+  console.log(data.characters[pickedchar].trialinfo);
+  if (data.characters[pickedchar].trialinfo.success == true) {
+    $("#trialpassagename").text(
+      data.characters[pickedchar].trialinfo.passagetitle
+    );
+    $("#trialperktext").text(data.characters[pickedchar].trialinfo.passagetext);
+    $("#trialicon").attr(
+      "src",
+      data.characters[pickedchar].trialinfo.passageicon
+    );
+    setWinsAndLosses(
+      data.characters[pickedchar].trialinfo.wins,
+      data.characters[pickedchar].trialinfo.losses
+    );
+    $(".trialnone").hide();
+    $(".trialbottom").show();
+  } else {
+    $(".trialnone").show();
+    $(".trialbottom").hide();
+  }
 }
 
 function doEmblem() {
@@ -134,6 +158,7 @@ function doEmblem() {
 
 function doSubClass() {
   console.log("Running doSubClass");
+  $(".subclass").attr("title", data.characters[pickedchar].subclass);
   $(".subclass").css(
     "background-image",
     "url('https://www.bungie.net/" +
@@ -233,7 +258,9 @@ function buildEquipment() {
       equipKey +
       "' class='" +
       data.characters[pickedchar].equipment[equipKey].type +
-      "' style='background-size:contain;background-image: url(\"https://www.bungie.net" +
+      "' style='order:" +
+      data.characters[pickedchar].equipment[equipKey].order +
+      ';background-size:contain;background-image: url("https://www.bungie.net' +
       data.characters[pickedchar].equipment[equipKey].images.icon +
       "\")'><div class='equipmentlight'>" +
       data.characters[pickedchar].equipment[equipKey].light +
@@ -424,5 +451,38 @@ function pveStatLookup(statName) {
       return { name: "Kills", order: 1 };
     default:
       return { name: statName, order: -1 };
+  }
+}
+
+function setWinsAndLosses(wins, losses) {
+  $(".arc").removeClass("win");
+  $(".oarc").removeClass("loss");
+  $(".circle").attr("title", "Wins: " + wins + " / Losses: " + losses);
+  switch (wins) {
+    case 7:
+      $(".arc7").addClass("win");
+    case 6:
+      $(".arc6").addClass("win");
+    case 5:
+      $(".arc5").addClass("win");
+    case 4:
+      $(".arc4").addClass("win");
+    case 3:
+      $(".arc3").addClass("win");
+    case 2:
+      $(".arc2").addClass("win");
+    case 1:
+      $(".arc1").addClass("win");
+  }
+  switch (losses) {
+    case 3:
+      $(".oarc6").addClass("loss");
+      $(".oarc5").addClass("loss");
+    case 2:
+      $(".oarc4").addClass("loss");
+      $(".oarc3").addClass("loss");
+    case 1:
+      $(".oarc2").addClass("loss");
+      $(".oarc1").addClass("loss");
   }
 }
