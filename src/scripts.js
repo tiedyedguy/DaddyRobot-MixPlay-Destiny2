@@ -267,6 +267,10 @@ function buildEquipment() {
       "</div></div>";
 
     $("#" + data.characters[pickedchar].equipment[equipKey].type).append(html);
+    $("#" + equipKey).attr(
+      "title",
+      data.characters[pickedchar].equipment[equipKey].name
+    );
   });
 }
 

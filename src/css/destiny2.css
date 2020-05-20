@@ -97,6 +97,12 @@ body {
   background-size: cover;
   height: 116px;
   width: 116px;
+  
+}
+
+.subclass:hover {
+-webkit-filter: blur(1px);
+transition: 1s ease;
 }
 
 .equipment {
@@ -116,6 +122,18 @@ body {
   background: green;
   margin: 5px;
   position: relative;
+}
+
+.PrimaryWeapon {
+  order: 1;
+}
+
+.EnergyWeapon {
+  order: 2;
+}
+
+.PowerWeapon {
+  order: 3;
 }
 
 .equipmentlight {
@@ -295,4 +313,220 @@ body {
 
 .d2pullouttext {
   color: white;
+}
+
+.trials {
+  color:white;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:5px;
+}
+
+.trialnone {
+  display:none;
+}
+
+.trialbottom {
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.trialinfo {
+  display:flex;
+  flex-direction:column;
+  justify-content:space-around;
+  border: solid white 1px;
+  border-radius: 10px;
+  width: 45%;
+}
+.trialpassage {
+  background: #D8BD48;
+  font-size:1em;
+  padding:5px;
+  margin-bottom:10px;
+  border-radius: 10px 10px 0px 0px;
+}
+.trialpassageinfo {
+  display:flex;
+ flex-direction:row;
+  align-items:center;
+  justify-content:start;
+  padding:5px;
+  font-size: .8em;
+}
+.trialperktext {
+  padding-left:10px;
+}
+.trialicon img{
+  width:50px;
+  height:50px;
+  border: 1px white solid;
+  border-radius: 10px;
+}
+
+.circle {
+  position: relative;
+  width: 8em;
+  height: 8em;
+  border-radius: 50%;
+  margin:2.5em;
+}
+.circle:hover {
+-webkit-filter: blur(1px);
+transition: 1s ease;
+}
+
+
+
+.circle img {
+
+  width:90%;
+  height:90%
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.arc {
+ overflow: hidden;
+  position: absolute;
+  top: -1em;
+  right: 50%;
+  bottom: 50%;
+  left: -1em;
+  transform-origin: 100% 100%;
+}
+
+.arc:before {
+  box-sizing: border-box;
+  display: block;
+  border: solid 1em rgba(187,148,93,.25);
+  width: 200%;
+  height: 200%;
+  border-radius: 50%;
+  transform: skewX(-43deg);
+  content: '';
+     -webkit-transition : border 500ms ease-out; 
+ -moz-transition : border 500ms ease-out;
+ -o-transition : border 500ms ease-out;
+}
+
+.arc1 {
+   transform: rotate(67deg) skewX(43deg);
+}
+
+.arc2 {
+ 
+  transform: rotate(118deg) skewX(43deg);
+}
+
+.arc3 {
+
+  transform: rotate(169deg) skewX(43deg);
+}
+
+.arc4 {
+  
+  transform: rotate(220deg) skewX(43deg);
+}
+
+.arc5 {
+ 
+  transform: rotate(271deg) skewX(43deg);
+}
+
+.arc6 {
+ 
+  transform: rotate(323deg) skewX(43deg);
+}
+
+
+.arc7{
+ 
+  transform: rotate(17deg) skewX(43deg);
+}
+
+.oarc {
+   overflow: hidden;
+  position: absolute;
+  top: -2.5em;
+  right: 50%;
+  bottom: 50%;
+  left: -2.5em;
+  transform-origin: 100% 100%;
+}
+
+.oarc:before {
+  box-sizing: border-box;
+  display: block;
+  border: solid 1em rgba(185,0,0,0.10);
+  width: 200%;
+  height: 200%;
+  border-radius: 50%;
+  transform: skewX(-33deg);
+  content: '';
+       -webkit-transition : border 500ms ease-out; 
+ -moz-transition : border 500ms ease-out;
+ -o-transition : border 500ms ease-out;
+}
+
+.oarc1 {
+ 
+  transform: rotate(32deg) skewX(33deg);
+   
+}
+
+
+.oarc2 {
+ 
+  transform: rotate(89deg) skewX(33deg);
+   
+}
+
+.oarc3 {
+  
+  transform: rotate(152deg) skewX(33deg);
+   
+}
+
+.oarc4 {
+  
+  transform: rotate(209deg) skewX(33deg);
+   
+}
+
+
+.oarc5 {
+ 
+  transform: rotate(272deg) skewX(33deg);
+   
+}
+
+.oarc6 {
+  
+  transform: rotate(329deg) skewX(33deg);
+  
+}
+
+.win:before {
+  border: solid 1em rgba(187,148,93,1);
+       -webkit-transition : border 500ms ease-out; 
+ -moz-transition : border 500ms ease-out;
+ -o-transition : border 500ms ease-out;
+ 
+  
+}
+
+.loss:before {
+  border: solid 1em rgba(185,0,0,1);
+       -webkit-transition : border 500ms ease-out; 
+ -moz-transition : border 500ms ease-out;
+ -o-transition : border 500ms ease-out;
+  
 }
